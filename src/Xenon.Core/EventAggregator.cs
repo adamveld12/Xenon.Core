@@ -13,7 +13,10 @@ namespace Xenon.Core
         private readonly IDictionary<Type, IList<object>> _listeners = new Dictionary<Type, IList<object>>();
 
         #region Lifecycle 
-        
+
+        /// <summary>
+        /// Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.
+        /// </summary>
         ~EventAggregator()
         {
             Dispose(false);

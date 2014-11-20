@@ -21,6 +21,9 @@ namespace Xenon.Core
             _components = new LinkedList<GameComponent>();
         }
 
+        /// <summary>
+        /// Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.
+        /// </summary>
         ~GameComponentManager() { Dispose(false); }
 
         /// <summary>
@@ -74,6 +77,13 @@ namespace Xenon.Core
                 gameComponent.Render();
         }
 
+        /// <summary>
+        /// Returns a string that represents the current object.
+        /// </summary>
+        /// <returns>
+        /// A string that represents the current object.
+        /// </returns>
+        /// <filterpriority>2</filterpriority>
         public override string ToString()
         {
             return _components.Select(x => x.GetType().Name).Aggregate("", (acc, item) => acc + item);

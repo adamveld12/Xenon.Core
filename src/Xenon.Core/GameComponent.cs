@@ -17,6 +17,9 @@ namespace Xenon.Core
             Visible = true;
         }
 
+        /// <summary>
+        /// Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.
+        /// </summary>
         ~GameComponent()
         {
             Dispose(false);
