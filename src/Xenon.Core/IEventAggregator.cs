@@ -2,6 +2,9 @@ using System;
 
 namespace Xenon.Core
 {
+    /// <summary>
+    /// Routes events to multiple handlers
+    /// </summary>
     public interface IEventAggregator : IDisposable
     {
         /// <summary>
