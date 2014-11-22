@@ -12,7 +12,7 @@ namespace Xenon.Core
     {
         private readonly IDictionary<Type, IList<object>> _listeners = new Dictionary<Type, IList<object>>();
 
-        #region Lifecylce 
+        #region Lifecycle 
         
         ~EventAggregator()
         {
