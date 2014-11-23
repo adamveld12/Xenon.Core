@@ -40,7 +40,13 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="EventAggregator.cs" />
+    <Compile Include="IEnumerableExtensions.cs" />
+    <Compile Include="GameComponent.cs" />
+    <Compile Include="GameComponentManager.cs" />
+    <Compile Include="IEventAggregator.cs" />
+    <Compile Include="IEventHandler.cs" />
+    <Compile Include="Monad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
