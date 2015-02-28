@@ -5,6 +5,11 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xenon.Core", "Xenon.Core\Xenon.Core.csproj", "{AC0104B0-1BA8-4695-8EB7-2B8A42CBF452}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{FA79BD93-2A01-4BFD-8652-D59D30E71C0A}"
+	ProjectSection(SolutionItems) = preProject
+		..\jsakefile = ..\jsakefile
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

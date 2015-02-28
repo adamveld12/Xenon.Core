@@ -52,12 +52,14 @@ namespace Xenon.Core
         /// <summary>
         /// Updates this <see cref="GameComponent"/>
         /// </summary>
-        public virtual void Update() {}
+        /// <param name="gameTime"></param>
+        public virtual void Update(GameTime gameTime) {}
 
         /// <summary>
         /// Renders this <see cref="GameComponent"/>
         /// </summary>
-        public virtual void Render() {}
+        /// <param name="gameTime"></param>
+        public virtual void Render(GameTime gameTime) {}
 
         #endregion
 

@@ -41,13 +41,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventAggregator.cs" />
+    <Compile Include="MathHelper.cs" />
+    <Compile Include="States\GameState.cs" />
+    <Compile Include="States\GameStateStack.cs" />
+    <Compile Include="GameTime.cs" />
     <Compile Include="IEnumerableExtensions.cs" />
-    <Compile Include="GameComponent.cs" />
-    <Compile Include="GameComponentManager.cs" />
+    <Compile Include="Components\GameComponent.cs" />
+    <Compile Include="Components\GameComponentManager.cs" />
     <Compile Include="IEventAggregator.cs" />
     <Compile Include="IEventHandler.cs" />
     <Compile Include="Monad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\Interfaces\IGameStateStack.cs" />
+    <Compile Include="States\Transition.cs" />
+    <Compile Include="States\TransitionState.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

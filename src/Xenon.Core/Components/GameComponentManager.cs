@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace Xenon.Core
 {
@@ -62,19 +63,19 @@ namespace Xenon.Core
         /// <summary>
         /// Updates the <see cref="GameComponent"/>s 
         /// </summary>
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             foreach (var gameComponent in _components.Where(x => x.Enabled))
-                gameComponent.Update();
+                gameComponent.Update(gameTime);
         }
 
         /// <summary>
         /// Renders the <see cref="GameComponent"/>s 
         /// </summary>
-        public void Render()
+        public void Render(GameTime gameTime)
         {
             foreach (var gameComponent in _components.Where(x => x.Visible))
-                gameComponent.Render();
+                gameComponent.Render(gameTime);
         }
 
         /// <summary>
@@ -86,7 +87,10 @@ namespace Xenon.Core
         /// <filterpriority>2</filterpriority>
         public override string ToString()
         {
-            return _components.Select(x => x.GetType().Name).Aggregate("", (acc, item) => acc + item);
+            return _components.Select(x => x.GetType().Name).Aggregate(new StringBuilder(), (acc, item) => {
+                acc.Append(item);
+                return acc;
+            }).ToString();
         }
     }
 }
