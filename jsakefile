@@ -1,0 +1,9 @@
+var build = require("skipjack").build;
+
+task(function(){
+
+    var output = build.sync("./src/Xenon.sln", function(options){
+    });
+
+    this.log(output);
+}).describe('Prints "hello world" to the terminal.');
