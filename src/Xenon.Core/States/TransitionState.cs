@@ -5,6 +5,13 @@ namespace Xenon.Core.States
     /// </summary>
     public enum TransitionState : byte
     {
-        Forward = 0, Backward
+        /// <summary>
+        /// Moves the transition toward the end of the timeline t(x)
+        /// </summary>
+        Forward = 0, 
+        /// <summary>
+        /// Moves the transition backwards toward t(0)
+        /// </summary>
+        Backward
     }
 }

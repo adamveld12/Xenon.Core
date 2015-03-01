@@ -18,6 +18,9 @@ namespace Xenon.Core.States
             Paused = false;
         }
 
+        /// <summary>
+        /// Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.
+        /// </summary>
         ~GameState() { Dispose(false); }
 
         /// <summary>
