@@ -7,9 +7,6 @@ namespace Xenon.Core.States
     /// </summary>
     public abstract class GameState : IDisposable
     {
-        private bool _exiting = false;
-        private bool _canExit = false;
-
         #region Lifecycle 
 
         /// <summary>
@@ -54,7 +51,6 @@ namespace Xenon.Core.States
         /// </summary>
         public void Exit()
         {
-            _exiting = true;
             Exited = true;
             OnExit();
         }
@@ -101,16 +97,12 @@ namespace Xenon.Core.States
         /// Updates this state
         /// </summary>
         /// <param name="gameTime"></param>
-        public void Update(GameTime gameTime)
-        {
-        }
+        public virtual void Update(GameTime gameTime) { }
 
         /// <summary>
         /// Draws this state
         /// </summary>
-        public void Draw(GameTime gameTime)
-        {
-        }
+        public virtual void Render(GameTime gameTime) { }
 
         /// <summary>
         /// Gets if this <see cref="GameState"/> is active
