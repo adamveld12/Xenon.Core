@@ -44,7 +44,6 @@ namespace Xenon.Core.States
 
         #endregion
 
-
         /// <summary>
         /// Activates a new <see cref="GameState"/> and pauses any underlying states
         /// </summary>

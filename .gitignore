@@ -19,3 +19,5 @@
 src/**/obj
 
 *.DotSettings
+
+src/Block_Test

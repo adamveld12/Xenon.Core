@@ -79,22 +79,22 @@ namespace Xenon.Core.States
         /// <summary>
         /// When this state is started for the first time
         /// </summary>
-        public abstract void OnPause();
+        public virtual void OnPause() { }
 
         /// <summary>
         /// When this state is exiting
         /// </summary>
-        public abstract void OnUnpause();
+        public virtual void OnUnpause() { }
 
         /// <summary>
         /// When this state is started for the first time
         /// </summary>
-        public abstract void OnEnter();
+        public virtual void OnEnter() { }
 
         /// <summary>
         /// When this state is exiting
         /// </summary>
-        public abstract void OnExit();
+        public virtual void OnExit() { }
 
         /// <summary>
         /// Updates this state
@@ -124,6 +124,5 @@ namespace Xenon.Core.States
         /// Gets if this <see cref="GameState"/> has been signaled to exit
         /// </summary>
         public bool Exited { get; private set; }
-
     }
 }
