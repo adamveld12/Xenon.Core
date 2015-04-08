@@ -52,7 +52,7 @@ namespace Xenon.Core
             IList<object> handlerList;
 
             if (_listeners.TryGetValue(messageType, out handlerList))
-                handlerList.Select(handler => (handler as IEventHandler<TMessage>))
+                handlerList.OfType<IEventHandler<TMessage>>()
                            .ForEach(stronglyTypedHandler => stronglyTypedHandler.Handle(message));
         }
 
@@ -81,9 +81,7 @@ namespace Xenon.Core
             IList<object> handlerList;
 
             if (_listeners.TryGetValue(messageType, out handlerList))
-            {
                 Debug.Assert(handlerList.Remove(eventHandler));
-            }
         }
 
         /// <summary>

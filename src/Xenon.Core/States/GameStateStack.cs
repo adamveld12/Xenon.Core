@@ -53,7 +53,10 @@ namespace Xenon.Core.States
             if(_states.Count > 0)
                 _states.Peek().Pause();
 
+
             _states.Push(newState);
+
+            newState.OnEnter();
         }
 
         /// <summary>
@@ -90,7 +93,7 @@ namespace Xenon.Core.States
         /// <param name="gameTime"></param>
         public void Render(GameTime gameTime)
         {
-            _states.ForEach(state => state.Update(gameTime));
+            _states.ForEach(state => state.Render(gameTime));
         }
     }
 }

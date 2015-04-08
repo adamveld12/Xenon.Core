@@ -5,7 +5,7 @@ namespace Xenon.Core
     /// <summary>
     /// Extension methods for monadic operators
     /// </summary>
-    public static class Monad
+    public static class Extensions
     {
         /// <summary>
         /// Executes a <see cref="Action"/>

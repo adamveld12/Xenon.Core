@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Xenon.Core</RootNamespace>
     <AssemblyName>Xenon.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\..\bin\AnyCPU\Debug\Xenon.Core.XML</DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,13 +37,23 @@
     <DocumentationFile>..\..\bin\AnyCPU\Release\Xenon.Core.XML</DocumentationFile>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coroutines\Interfaces\ICoroutineManager.cs" />
+    <Compile Include="Coroutines\Routine.cs" />
+    <Compile Include="Coroutines\CoroutineManager.cs" />
+    <Compile Include="Coroutines\RoutineHandle.cs" />
+    <Compile Include="Coroutines\Wait.cs" />
     <Compile Include="EventAggregator.cs" />
     <Compile Include="MathHelper.cs" />
+    <Compile Include="Services\Interfaces\IGameServiceLocator.cs" />
+    <Compile Include="Services\GameServiceLocator.cs" />
+    <Compile Include="Services\ServiceAlreadyRegisteredException.cs" />
+    <Compile Include="Services\ServiceProviderExtensions.cs" />
     <Compile Include="States\GameState.cs" />
     <Compile Include="States\GameStateStack.cs" />
     <Compile Include="GameTime.cs" />
@@ -50,11 +62,14 @@
     <Compile Include="Components\GameComponentManager.cs" />
     <Compile Include="IEventAggregator.cs" />
     <Compile Include="IEventHandler.cs" />
-    <Compile Include="Monad.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="States\Interfaces\IGameStateStack.cs" />
     <Compile Include="States\Transition.cs" />
     <Compile Include="States\TransitionState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Networking\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
