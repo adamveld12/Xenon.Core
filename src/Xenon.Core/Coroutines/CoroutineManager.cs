@@ -36,6 +36,10 @@ namespace Xenon.Core.Coroutines
         public override void Update(GameTime gameTime)
         {
             _routines.ForEach(routineHandle => routineHandle.Update(gameTime));
+            foreach(var handle in _routines.Where(handle => handle.Done))
+            {
+                _routines.Remove(handle);
+            }
         }
     }
 }
